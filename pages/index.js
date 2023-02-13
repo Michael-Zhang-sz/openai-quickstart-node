@@ -18,12 +18,12 @@ export default function Home() {
       });
 
       const data = await response.json();
+      console.error(data)
       if (response.status !== 200) {
         throw data.error || new Error(`Request failed with status ${response.status}`);
       }
 
       setResult(data.result);
-      console(data.result)
       setAnimalInput("");
     } catch(error) {
       // Consider implementing your own error handling logic here
